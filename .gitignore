@@ -1,0 +1,23 @@
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build folders
+dist/
+build/
+.next/
+
+# Log files
+*.log
+npm-debug.log*
+
+# System files
+.DS_Store
+
+# Local Claude settings
+.claude/

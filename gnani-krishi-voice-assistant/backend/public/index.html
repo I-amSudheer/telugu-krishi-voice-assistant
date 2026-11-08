@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="te">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>తెలుగు కృషి వాయిస్ అసిస్టెంట్</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="main-title">తెలుగు కృషి వాయిస్ అసిస్టెంట్</h1>
+        <p class="subtitle">వాయిస్ &rarr; సమాధానం (టెక్స్ట్ + ఆడియో) &bull; డెమో MVP</p>
+      </header>
+
+      <main class="card">
+        <!-- Voice Controls -->
+        <div class="voice-controls">
+          <button id="recordBtn" class="btn btn-record" type="button">
+            <span class="icon">🎙️</span> మైక్ రికార్డ్ (Record)
+          </button>
+          <button id="stopBtn" class="btn btn-stop" type="button" disabled>
+            <span class="icon">⏹️</span> ఆపు (Stop)
+          </button>
+        </div>
+
+        <!-- Quick Demo Questions -->
+        <div class="quick-demo-section">
+          <span class="quick-demo-label">త్వరిత ప్రశ్నలు (Quick Demo):</span>
+          <div class="quick-chips">
+            <button class="chip-btn" data-query="రైతు నేస్తం పథకం వివరాలు మరియు ప్రయోజనాలు ఏమిటి?">
+              🌾 రైతు నేస్తం
+            </button>
+            <button class="chip-btn" data-query="రైతులకు ప్రభుత్వ పథకాల కోసం అవసరమైన పత్రాలు ఏమిటి?">
+              📄 అవసరమైన పత్రాలు
+            </button>
+            <button class="chip-btn" data-query="ఈరోజు వాతావరణ సమాచారం మరియు వ్యవసాయ సూచనలు ఏమిటి?">
+              🌧️ వాతావరణం
+            </button>
+            <button class="chip-btn" data-query="పంట ఉత్పత్తుల ప్రస్తుత మార్కెట్ ధరలు మరియు అమ్మకం సలహాలు ఏమిటి?">
+              💰 మార్కెట్ ధరలు
+            </button>
+          </div>
+        </div>
+
+        <!-- Status Message -->
+        <div id="statusMessage" class="status-box">సిద్ధంగా ఉంది. మైక్ రికార్డ్ నొక్కండి లేదా ప్రశ్న అడగండి.</div>
+
+        <!-- Query and Answer Grid -->
+        <div class="io-grid">
+          <div class="io-column">
+            <label for="userQueryText" class="column-title">ప్రశ్న (Question / Transcript)</label>
+            <textarea
+              id="userQueryText"
+              class="text-box"
+              placeholder="మీరు మాట్లాడినది లేదా అడిగిన ప్రశ్న ఇక్కడ కనిపిస్తుంది..."
+              rows="6"
+            ></textarea>
+          </div>
+
+          <div class="io-column">
+            <label for="aiResponseText" class="column-title">సమాధానం (Answer in Telugu)</label>
+            <div id="aiResponseText" class="text-box answer-box" tabindex="0">
+              ఇక్కడ తెలుగు బుల్లెట్ల సమాధానం కనిపిస్తుంది...
+            </div>
+          </div>
+        </div>
+
+        <!-- Action: Send Text -->
+        <div class="text-action-row">
+          <button id="sendTextBtn" class="btn btn-send-text" type="button">
+            <span class="icon">💬</span> టెక్స్ట్ ద్వారా అడగండి (Send Text)
+          </button>
+        </div>
+
+        <!-- Audio Output Section -->
+        <div class="audio-section">
+          <h2 class="section-title">తెలుగు ఆడియో సమాధానం (Telugu Voice Output - Timbre)</h2>
+          <audio id="audioPlayer" class="audio-player" controls preload="auto"></audio>
+
+          <div class="audio-action-row">
+            <button id="processAudioBtn" class="btn btn-process" type="button" disabled>
+              <span class="icon">⚡</span> ఆడియో ప్రాసెస్ చేయి (Get Answer)
+            </button>
+          </div>
+        </div>
+
+        <!-- Note footer -->
+        <footer class="card-footer">
+          డెమో కోసం: Weather/Prices కి జిల్లా/పంట వివరాలు కావచ్చు.
+        </footer>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

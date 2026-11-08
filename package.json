@@ -1,0 +1,9 @@
+{
+  "name": "farmer-voice-assistant-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm start --prefix gnani-krishi-voice-assistant/backend",
+    "install:backend": "npm install --prefix gnani-krishi-voice-assistant/backend"
+  }
+}
